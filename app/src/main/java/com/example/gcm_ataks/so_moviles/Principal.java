@@ -39,7 +39,11 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+        fragClases = new fragClases();
         fragLectorQR = new fragLectorQR();
+        fragHorario = new fragMiHorario();
+        fragProf = new fragBuscarProfesor();
+        fragEdifi = new fragBuscarEdificio();
 
     }
 
@@ -56,6 +60,7 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
+                getFragmentManager().beginTransaction().replace(R.id.layFragment,fragClases).commit();
                 break;
             case 2:
                 mTitle = getString(R.string.title_section2);
@@ -63,12 +68,15 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
+                getFragmentManager().beginTransaction().replace(R.id.layFragment,fragHorario).commit();
                 break;
             case 4:
                 mTitle = getString(R.string.title_section4);
+                getFragmentManager().beginTransaction().replace(R.id.layFragment,fragProf).commit();
                 break;
             case 5:
                 mTitle = getString(R.string.title_section5);
+                getFragmentManager().beginTransaction().replace(R.id.layFragment,fragEdifi).commit();
                 break;
         }
     }
