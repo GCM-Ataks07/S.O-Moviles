@@ -45,6 +45,9 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
         fragProf = new fragBuscarProfesor();
         fragEdifi = new fragBuscarEdificio();
 
+        compHora Hr = new compHora();
+        Hr.start();
+
     }
 
     @Override

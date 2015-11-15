@@ -17,4 +17,5 @@
     <string name="title_activity_frag_lector_qr">fragLectorQR</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_hola">hola</string>
 </resources>
