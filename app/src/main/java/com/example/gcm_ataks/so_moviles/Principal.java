@@ -46,7 +46,8 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
         fragEdifi = new fragBuscarEdificio();
 
         compHora Hr = new compHora();
-        Hr.start();
+        Thread hilo = new Thread(Hr);
+        hilo.start();
 
     }
 
@@ -90,13 +91,12 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
         actionBar.setTitle(mTitle);
     }
 
-    @Override
+   @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         if (!mNavigationDrawerFragment.isDrawerOpen()) {
             // Only show items in the action bar relevant to this screen
             // if the drawer is not showing. Otherwise, let the drawer
             // decide what to show in the action bar.
-            getMenuInflater().inflate(R.menu.principal, menu);
             restoreActionBar();
             return true;
         }
@@ -109,7 +109,6 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
@@ -117,7 +116,6 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
 
         return super.onOptionsItemSelected(item);
     }
-
     /**
      * A placeholder fragment containing a simple view.
      */

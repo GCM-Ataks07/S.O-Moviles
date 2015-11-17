@@ -7,8 +7,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextClock;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -19,7 +21,7 @@ public class fragClases extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(final LayoutInflater inflater, final ViewGroup container, final Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frag_clases, container, false);
         TextView a = (TextView)view.findViewById(R.id.txtReloj);
         Calendar c = Calendar.getInstance();
@@ -27,8 +29,6 @@ public class fragClases extends Fragment {
         int Mn = c.get(Calendar.MINUTE);
         //Log.e("Mi Thread", "El Valor es: "+Hr+" "+Mn);
         a.setText(Hr+" "+Mn);
-
-
         return view;
     }
 }

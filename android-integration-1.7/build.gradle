@@ -1,0 +1,6 @@
+configurations.create("default")
+artifacts.add("default", file('android-integration-1.7.jar'))
+dependencies {
+    compile project(':app')
+    compile files('android-integration-1.7.jar')
+}
