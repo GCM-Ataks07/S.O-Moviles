@@ -1,0 +1,23 @@
+<resources>
+    <string-array name="Edificios">
+        <item>Entrada Av. Homero</item>
+        <item>Entrada Av. Industrias</item>
+        <item>A-Administrativo</item>
+        <item>B-Aulas</item>
+        <item>C-Ciencias Básicas</item>
+        <item>D-Aulas</item>
+        <item>E-Aulas</item>
+        <item>F-Aulas</item>
+        <item>G-Aulas</item>
+        <item>M-Aulas</item>
+        <item>O-Aulas</item>
+        <item>P-Ing. Sistemas e Ing.Industrial</item>
+        <item>R-Administrativo</item>
+        <item>S-Salas</item>
+        <item>Cafeteria</item>
+        <item>Bilioteca</item>
+        <item>Lab. Fisica y Lab. Ing. Industrial</item>
+
+    </string-array>
+
+</resources>

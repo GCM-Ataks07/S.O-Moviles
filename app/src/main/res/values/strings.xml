@@ -10,12 +10,11 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
-    <string name="action_example">Buscar</string>
 
     <string name="action_settings">Configuración</string>
     <string name="title_activity_clases">CLASES</string>
     <string name="title_activity_frag_lector_qr">fragLectorQR</string>
+    <string name="title_activity_frag_buscar_edificio">fragBuscarEdificio</string>
 
-    <string name="hello_world">Hello world!</string>
-    <string name="title_activity_hola">hola</string>
+
 </resources>
