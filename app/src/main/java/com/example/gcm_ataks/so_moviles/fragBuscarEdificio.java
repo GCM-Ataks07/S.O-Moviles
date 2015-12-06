@@ -46,13 +46,10 @@ public class fragBuscarEdificio extends Fragment {
                     encontrarEdificio(enc);
                     encontrarEdificio(vas);
                     layMapa.addView(new dwMap(getActivity()),0);
-                    Log.e("Edificio", spnrEdEnc.getSelectedItem() + "");
-                    Log.e("Edificio", spnredVas.getSelectedItem()+"");
                 } else
                     Toast.makeText(getActivity(), "El destino y la Ubicación son las mismas", Toast.LENGTH_SHORT).show();
             }
         });
-
         return view;
     }
 
@@ -70,14 +67,11 @@ public class fragBuscarEdificio extends Fragment {
             canvas.drawRect(edUno, paint);
             paint.setColor(Color.BLUE);
             canvas.drawRect(edDos, paint);
-            Log.e("Valores Edificio1:", pAEdiUno + " " + pBEdiUno + " " + pCEdiUno + " " + pDEdiUno);
-            Log.e("Valores Edificio2:", pAEdiUno + " " + pBEdiUno + " " + pCEdiUno + " " + pDEdiUno);
             ban=1;
         }
     }
 
     public void encontrarEdificio(int edi) {
-        Log.e("Tamaño",layMapa.getHeight()+" "+layMapa.getWidth() + "BANDERA " +ban);
         //distancia lado derecho,distancia superior,ancho,alura
         switch (edi) {
             case 0://homero
@@ -87,6 +81,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 179;
                     pDEdiUno = 19;
                 }else {
+                    Toast.makeText(getActivity(),"Entrada Avenida Homero",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 18;
                     pBEdiDos = 0;
                     pCEdiDos = 179;
@@ -100,6 +95,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 555;
                     pDEdiUno = 538;
                 }else {
+                    Toast.makeText(getActivity(),"Entrada Avenida Industrias",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 519;
                     pBEdiDos = 335;
                     pCEdiDos = 555;
@@ -113,6 +109,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 423;
                     pDEdiUno = 523;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio A",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 391;
                     pBEdiDos = 503;
                     pCEdiDos = 423;
@@ -126,6 +123,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 449;
                     pDEdiUno = 382;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio B",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 413;
                     pBEdiDos = 360;
                     pCEdiDos = 449;
@@ -139,6 +137,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 384;
                     pDEdiUno = 469;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio C",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 356;
                     pBEdiDos = 446;
                     pCEdiDos = 384;
@@ -152,6 +151,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 359;
                     pDEdiUno = 434;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio D",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 331;
                     pBEdiDos = 412;
                     pCEdiDos = 359;
@@ -165,6 +165,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 390;
                     pDEdiUno = 372;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio E",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 357;
                     pBEdiDos = 342;
                     pCEdiDos = 390;
@@ -178,6 +179,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 350;
                     pDEdiUno = 399;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio F",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 319;
                     pBEdiDos = 375;
                     pCEdiDos = 350;
@@ -191,6 +193,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 452;
                     pDEdiUno = 463;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio G",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 421;
                     pBEdiDos = 438;
                     pCEdiDos = 452;
@@ -204,6 +207,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 74;
                     pDEdiUno = 104;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio M",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 32;
                     pBEdiDos = 83;
                     pCEdiDos = 74;
@@ -217,6 +221,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 79;
                     pDEdiUno = 149;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio O",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 37;
                     pBEdiDos = 137;
                     pCEdiDos = 79;
@@ -230,6 +235,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 316;
                     pDEdiUno = 457;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio P",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 290;
                     pBEdiDos = 431;
                     pCEdiDos = 316;
@@ -243,6 +249,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 157;
                     pDEdiUno = 278;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio R",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 139;
                     pBEdiDos = 251;
                     pCEdiDos = 157;
@@ -256,6 +263,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 295;
                     pDEdiUno = 355;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio S",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 265;
                     pBEdiDos = 328;
                     pCEdiDos = 295;
@@ -269,6 +277,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 434;
                     pDEdiUno = 327;
                 }else {
+                    Toast.makeText(getActivity(),"Cafeteria",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 417;
                     pBEdiDos = 308;
                     pCEdiDos = 434;
@@ -282,6 +291,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 298;
                     pDEdiUno = 415;
                 }else {
+                    Toast.makeText(getActivity(),"Biblioteca",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 271;
                     pBEdiDos = 368;
                     pCEdiDos = 298;
@@ -295,6 +305,7 @@ public class fragBuscarEdificio extends Fragment {
                     pCEdiUno = 344;
                     pDEdiUno = 352;
                 }else {
+                    Toast.makeText(getActivity(),"Contenido Edificio Lab. de Metodos",Toast.LENGTH_SHORT).show();
                     pAEdiDos = 320;
                     pBEdiDos = 340;
                     pCEdiDos = 344;
@@ -303,6 +314,5 @@ public class fragBuscarEdificio extends Fragment {
                 break;
         }
             ban++;
-            Log.e("Punto", pAEdiUno +" "+ pBEdiUno +" "+ pCEdiUno + " "+ pDEdiUno);
     }
 }

@@ -6,6 +6,7 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -16,6 +17,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Calendar;
@@ -31,7 +34,23 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
         }
     };
 
-    /**
+
+    TextView txtVwLectorQR;
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.e("Mensaje", "Dentro del ");
+        txtVwLectorQR = (TextView)findViewById(R.id.txtVwLectorQR);
+        final IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        getFragmentManager().beginTransaction().replace(R.id.layFragment, fragLectorQR).commit();
+        txtVwLectorQR.post(new Runnable() {
+            @Override
+            public void run() {
+                txtVwLectorQR.setText(intentResult.getContents()+"");
+            }
+        });
+    }
+
+
+/**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
@@ -40,7 +59,7 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
     private CharSequence mTitle;
-    Fragment fragClases,fragLectorQR,fragHorario,fragProfesor,fragEdificio,fragConfiguracion;
+    Fragment fragClases,fragLectorQR,fragProf,fragEdificio,fragConfiguracion,fragHorario;
     Runnable miRunnable = new Runnable() {
         @Override
         public void run() {
@@ -82,10 +101,10 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
         // Set up the drawer.
         mNavigationDrawerFragment.setUp(R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
-        //fragClases = new fragClases();
+        fragClases = new fragClases();
         fragLectorQR = new fragLectorQR();
-        //fragHorario = new fragMiHorario();
-        //fragProf = new fragBuscarProfesor();
+        fragHorario = new fragHorario();
+        fragProf = new fragBuscarProfesores();
         fragEdificio = new fragBuscarEdificio();
 
         Thread hilo = new Thread(miRunnable);
@@ -106,7 +125,7 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
         switch (number) {
             case 1:
                 mTitle = getString(R.string.title_section1);
-                //getFragmentManager().beginTransaction().replace(R.id.layFragment,fragClases).commit();
+                getFragmentManager().beginTransaction().replace(R.id.layFragment,fragClases).commit();
                 break;
             case 2:
                 mTitle = getString(R.string.title_section2);
@@ -114,11 +133,11 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
                 break;
             case 3:
                 mTitle = getString(R.string.title_section3);
-                //getFragmentManager().beginTransaction().replace(R.id.layFragment,fragHorario).commit();
+                getFragmentManager().beginTransaction().replace(R.id.layFragment,fragHorario).commit();
                 break;
             case 4:
                 mTitle = getString(R.string.title_section4);
-                //getFragmentManager().beginTransaction().replace(R.id.layFragment,fragProf).commit();
+                getFragmentManager().beginTransaction().replace(R.id.layFragment,fragProf).commit();
                 break;
             case 5:
                 mTitle = getString(R.string.title_section5);
@@ -149,7 +168,6 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
     protected void onStop() {
         super.onStop();
         Toast.makeText(getApplicationContext(),"Aplicacion cerrada",Toast.LENGTH_SHORT).show();
-        Toast.makeText(getApplicationContext(),"Pero sigue corriendo",Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -197,8 +215,7 @@ public class Principal extends Activity implements NavigationDrawerFragment.Navi
         @Override
         public void onAttach(Activity activity) {
             super.onAttach(activity);
-            ((Principal) activity).onSectionAttached(
-                    getArguments().getInt(ARG_SECTION_NUMBER));
+            ((Principal) activity).onSectionAttached(getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
 

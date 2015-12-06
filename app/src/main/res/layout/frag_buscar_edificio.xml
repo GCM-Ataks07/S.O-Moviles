@@ -62,17 +62,6 @@
         android:id="@+id/btnRuta"
         android:layout_gravity="center_horizontal" />
 
-    <HorizontalScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/horizontalScrollView" >
-
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/scrollView" />
-    </HorizontalScrollView>
-
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

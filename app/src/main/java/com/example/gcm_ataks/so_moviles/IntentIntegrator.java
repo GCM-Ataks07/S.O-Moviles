@@ -117,7 +117,7 @@ public final class IntentIntegrator {
         PACKAGE_SETTER = temp;
     }
 
-    private IntentIntegrator() {
+    public IntentIntegrator() {
     }
 
     /**

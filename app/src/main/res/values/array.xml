@@ -17,7 +17,21 @@
         <item>Cafeteria</item>
         <item>Bilioteca</item>
         <item>Lab. de Metodos</item>
-
     </string-array>
 
+    <string-array name="hora">
+        <item>7:00am a 8:00am</item>
+        <item>8:00am a 9:00am</item>
+        <item>9:00am a 10:00am</item>
+        <item>10:00am a 11:00am</item>
+        <item>11:00am a 12:00pm</item>
+        <item>12:00pm a 1:00pm</item>
+        <item>1:00pm a 12:00pm</item>
+        <item>2:00pm a 3:00pm</item>
+        <item>3:00pm a 4:00pm</item>
+        <item>4:00pm a 5:00pm</item>
+        <item>5:00pm a 6:00pm</item>
+        <item>6:00pm a 7:00pm</item>
+        <item>7:00pm a 8:00pm</item>
+    </string-array>
 </resources>
